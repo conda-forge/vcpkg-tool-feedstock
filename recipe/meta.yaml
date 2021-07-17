@@ -3,10 +3,10 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ version.replace('-', '.') }}
 
 source:
-  url: https://github.com/microsoft/vcpkg-tool/archive/refs/tags/{{ version.replace('.', '-') }}.tar.gz
+  url: https://github.com/microsoft/vcpkg-tool/archive/refs/tags/{{ version }}.tar.gz
   sha256: 9ae168111ee9f2b7cb91a6646857db8415253487a41865bc2a3b88a81baed591
 
 build:
