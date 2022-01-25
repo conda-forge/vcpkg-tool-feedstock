@@ -8,8 +8,7 @@ package:
 source:
   url: https://github.com/microsoft/vcpkg-tool/archive/refs/tags/{{ version }}.tar.gz
   sha256: 16f17ed1733a6243f123f85bec301685da589b940876b4edab03e99c004d1a8e
-  patches:
-    - missing_clocale_include.patch  # [osx]
+
 build:
   number: 0
 
