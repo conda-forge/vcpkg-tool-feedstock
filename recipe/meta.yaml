@@ -8,8 +8,7 @@ package:
 source:
   url: https://github.com/microsoft/vcpkg-tool/archive/refs/tags/{{ version }}.tar.gz
   sha256: 5e7c46e51238795ad64ca3875469a595d291dc0e0e88dccfe74a40d4c50e635b
-  patches:
-    - 158.patch
+
 build:
   number: 0
 
