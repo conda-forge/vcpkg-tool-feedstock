@@ -3,5 +3,8 @@ conda_forge_output_validation: true
 test_on_native_only: true
 azure:
   settings_win:
-      pool:
-          vmImage: windows-2019
+    pool:
+      vmImage: windows-2019
+github:
+  branch_name: main
+  tooling_branch_name: main
