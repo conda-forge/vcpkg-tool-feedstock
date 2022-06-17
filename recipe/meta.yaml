@@ -1,5 +1,5 @@
 {% set name = "vcpkg-tool" %}
-{% set version = "2022-05-05" %}
+{% set version = "2022-06-17" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/microsoft/vcpkg-tool/archive/refs/tags/{{ version }}.tar.gz
-  sha256: c2d02a979b648d8e640c1704d72766e68ab783f03c6eb89f1ad5a6645fd7f547
+  sha256: 4b1f477510cde965f230317305b0b111bce20f21e02c1c0e73d7bb6ebec0e783
 
 build:
   number: 0
