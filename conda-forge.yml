@@ -4,7 +4,7 @@ test_on_native_only: true
 azure:
   settings_win:
     pool:
-      vmImage: windows-2019
+      vmImage: windows-2022
 github:
   branch_name: main
   tooling_branch_name: main
