@@ -1,6 +1,10 @@
 setlocal EnableDelayedExpansion
 setlocal enableextensions
 
+REM As long as we use a custom msvc in conda_build_config.yaml
+set CXX=
+set CC=
+
 cmake ^
 	-B build ^
 	-G "Ninja" ^
