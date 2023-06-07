@@ -1,22 +1,16 @@
 setlocal EnableDelayedExpansion
 setlocal enableextensions
 
-MKDIR build
-CD build
-
-cmake .. ^
+cmake ^
+	-B build ^
 	-G "Ninja" ^
-	-DCMAKE_BUILD_TYPE=Release ^
-	-DVCPKG_DEVELOPMENT_WARNINGS=OFF ^
+	-D CMAKE_BUILD_TYPE=Release ^
+	-D VCPKG_DEVELOPMENT_WARNINGS=OFF ^
 	%CMAKE_ARGS%
-
 if errorlevel 1 exit 1
 
-ninja
-@rem ninja test
-
+cmake --build build --parallel %CPU_COUNT%
 if errorlevel 1 exit 1
 
-IF NOT EXIST %LIBRARY_PREFIX%\bin MKDIR %LIBRARY_PREFIX%\bin
-COPY vcpkg.exe %LIBRARY_PREFIX%\bin\
+cmake -E copy build\vcpkg.exe %LIBRARY_PREFIX%\bin\vcpkg.exe
 if errorlevel 1 exit 1
