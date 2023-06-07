@@ -2,8 +2,10 @@ setlocal EnableDelayedExpansion
 setlocal enableextensions
 
 REM As long as we use a custom msvc in conda_build_config.yaml
-set CXX=
-set CC=
+for /f "delims=" %%i in ('where "%CC%"') do set "CC=%%i"
+if errorlevel 1 exit 1
+for /f "delims=" %%i in ('where "%CXX%"') do set "CXX=%%i"
+if errorlevel 1 exit 1
 
 cmake ^
 	-B build ^
