@@ -31,11 +31,11 @@ requirements:
 
 test:
   commands:
-    - vcpkg --help || true             # [unix]
-    - vcpkg.exe --help & exit 0        # [win]
+    - vcpkg --version                                 # [unix]
+    - vcpkg.exe --version                             # [win]
 
 about:
-  home: https://github.com/microsoft/vcpkg
+  home: https://github.com/microsoft/vcpkg-tool
   license: MIT
   license_file: LICENSE.txt
   summary: C++ Library Manager for Windows, Linux, and MacOS

@@ -1,8 +1,6 @@
 setlocal EnableDelayedExpansion
 setlocal enableextensions
 
-where %CXX%
-
 cmake ^
 	-B build ^
 	-G "Ninja" ^
