@@ -3,7 +3,7 @@ About vcpkg-tool-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/vcpkg-tool-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/microsoft/vcpkg
+Home: https://github.com/microsoft/vcpkg-tool
 
 Package license: MIT
 
