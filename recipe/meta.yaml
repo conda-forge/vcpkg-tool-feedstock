@@ -11,9 +11,11 @@ source:
 
 build:
   number: 0
+  script: bash %RECIPE_DIR%\build.sh  # [win]
 
 requirements:
   build:
+    - m2-bash  # [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - ninja
