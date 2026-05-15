@@ -1,16 +1,21 @@
-mkdir build
-cd build
+set -exuo pipefail
 
-export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+if [[ "${target_platform}" == osx-* ]]; then
+    export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+fi
+if [[ "${target_platform}" == osx-* ]]; then
+    LIBRARY_PREFIX="${PREFIX}/Library"
+else
+    LIBRARY_PREFIX="${PREFIX}"
+fi
 
-cmake .. \
+cmake \
+	-B build \
 	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DVCPKG_DEVELOPMENT_WARNINGS=OFF \
 	${CMAKE_ARGS}
 
-ninja
-# ninja test
+cmake --build build/ --parallel ${CPU_COUNT}
 
-mkdir -p $PREFIX/bin/
-mv vcpkg $PREFIX/bin/
+cmake -E copy build/vcpkg "${LIBRARY_PREFIX}/bin/vcpkg"
